@@ -13,7 +13,8 @@
     <meta charset="UTF-8">
     <title>用户注册页面</title>
     <script>
-        const check=document.querySelector(".btn")
+        const reg =document.querySelector('.reg')
+        const check =document.querySelector('.btn')
         check.addEventListener("click",function () {
             if(reg.password.value==""){
                 alert("密码不能为空！");
@@ -40,7 +41,7 @@
 <div class="register-container">
     <h2>注册</h2>
     <!-- 注册表单 -->
-    <form action="#" name="reg" method="post">
+    <form action=<%=request.getContextPath()%>/reg method="post" class="reg">
         <div class="input-field">
             <label for="password">姓名：</label>
             <input type="text" id="name" name="name" placeholder="请输入姓名" required>

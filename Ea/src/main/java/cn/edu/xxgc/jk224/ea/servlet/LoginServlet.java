@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
         String e_pwd = "";
         try {
             Connection conn = DBUtil.getConnection();
-            String sql = "SELECT password FROM user where name=? ";
+            String sql = "SELECT password FROM teacher where name=? ";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, username);
             ResultSet rs = pstmt.executeQuery();

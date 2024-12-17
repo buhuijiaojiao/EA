@@ -17,7 +17,7 @@
         <button type="submit">登录</button>
     </form>
     <div class="register">
-        没有账号? <a href=<%=request.getContextPath()%>/reg>注册</a>
+        没有账号? <a href=<%=request.getContextPath()%>/regist.jsp>注册</a>
     </div>
 </div>
 <div class="null"></div>
