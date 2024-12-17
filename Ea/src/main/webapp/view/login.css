@@ -1,0 +1,79 @@
+/*清除页面间隙*/
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.ccc {
+    flex-basis: 100%;
+    text-align: center;
+}
+/* 登录面板样式 */
+.login {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: saturate(150%) blur(10px);
+    border-radius: 15px;
+    margin-top: 30px !important;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+/*from标题*/
+.login h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* 输入框样式 */
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 按钮样式 */
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login button:hover {
+    background-color: #574b90;
+}
+
+/* 注册链接样式 */
+.register {
+    margin-top: 15px;
+    color: #333;
+}
+
+.register a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+.null {
+    flex-basis: 100%;
+    margin-top: 80px;
+}
