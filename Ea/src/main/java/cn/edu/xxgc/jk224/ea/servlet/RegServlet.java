@@ -19,6 +19,7 @@ public class RegServlet extends HttpServlet {
         PrintWriter pw=resp.getWriter();
         pw.println("奥里给");
         pw.println("damn");
+
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

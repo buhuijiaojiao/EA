@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java"
+        contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +11,13 @@
 </h1>
 <div class="login">
     <h1>登录</h1>
-    <form action="<!-- 登录跳转路径 -->" method="post">
-        <input type="text" name="username" placeholder="请输入您的账号">
-        <input type="password" name="password" placeholder="请输入您的密码">
+    <form action=<%=request.getContextPath()%>/login method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
         <button type="submit">登录</button>
     </form>
     <div class="register">
-        没有账号? <a href="regist.jsp">注册</a>
+        没有账号? <a href=<%=request.getContextPath()%>/reg>注册</a>
     </div>
 </div>
 <div class="null"></div>
