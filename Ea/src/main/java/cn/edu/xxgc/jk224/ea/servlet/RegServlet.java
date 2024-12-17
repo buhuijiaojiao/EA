@@ -18,6 +18,7 @@ public class RegServlet extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter pw=resp.getWriter();
         pw.println("奥里给");
+        pw.println("11");
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
