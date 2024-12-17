@@ -7,6 +7,7 @@
 <body>
 <h1>Hello World!
 </h1>
+<h2>nihao</h2>
 <br/>
 <a href=reg>注册</a>
 
