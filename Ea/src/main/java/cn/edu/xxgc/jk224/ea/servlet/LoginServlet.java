@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
         ServletContext application = this.getServletContext();
         PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession();
+
         // 获取用户注册时的密码
         String e_pwd = "";
         try {
@@ -47,6 +48,8 @@ public class LoginServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+
         //密码校验
         if (password.equals(e_pwd)) {  // 登录成功
             System.out.println(username + "登录成功");
