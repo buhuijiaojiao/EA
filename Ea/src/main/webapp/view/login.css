@@ -1,13 +1,15 @@
 /*清除页面间隙*/
 body {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #a8edea, #fed6e3);
     height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
 }
 .ccc {
     flex-basis: 100%;
@@ -17,9 +19,7 @@ body {
 .login {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: saturate(150%) blur(10px);
     border-radius: 15px;
-    margin-top: 30px !important;
     padding: 30px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -75,5 +75,6 @@ body {
 }
 .null {
     flex-basis: 100%;
-    margin-top: 80px;
+    height: 100px;
+
 }
