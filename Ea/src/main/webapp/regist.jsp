@@ -21,7 +21,7 @@
     <form action=<%=request.getContextPath()%>/reg method="post" id="regs" class="reg">
         <div class="input-field">
             <label for="username">账号：</label>
-            <input type="text" id="username" name="username" placeholder="请输入账号" required>
+            <input type="text" id="username" name="username" placeholder="请输入账号,4到16位(字母,数字,下划线,减号)" required>
         </div>
         <div class="input-field">
             <label for="password">密码：</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="input-field">
             <label for="password">请再次输入密码：</label>
-            <input type="password" id="password2" name="password2" placeholder="请输入密码" required>
+            <input type="password" id="password2" name="password2"  required>
         </div>
 
         <button type="submit" id="but" class="btn">注册</button>
