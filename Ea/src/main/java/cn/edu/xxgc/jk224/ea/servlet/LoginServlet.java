@@ -20,13 +20,13 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        //初步校验
-        if (username.length()==0 || password.length()==0 ) {
+        PrintWriter pw = response.getWriter();
+        /*//初步校验
+        if (username.length() == 0 || password.length() == 0) {
             //重定向
             response.sendRedirect(request.getContextPath() + "/login.jsp");
             return;
-        }
+        }*/
         ServletContext application = this.getServletContext();
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
@@ -88,8 +88,8 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse  response) throws ServletException, IOException {
-        doGet(request,response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 
 }

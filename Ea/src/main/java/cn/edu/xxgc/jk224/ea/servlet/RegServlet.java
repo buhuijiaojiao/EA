@@ -34,10 +34,6 @@ public class RegServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/regist.jsp");
             return;
         }
-
-
-
-
         PrintWriter out = response.getWriter();
 
 //        连接数据库

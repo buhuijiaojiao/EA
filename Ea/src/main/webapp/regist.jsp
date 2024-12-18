@@ -6,22 +6,42 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <html>
 <head>
     <link rel="stylesheet" href="./view/regist.css">
     <meta charset="UTF-8">
     <title>用户注册页面</title>
+    <script>
+        function check() {
+            const pw1 = document.getElementById('password')
+            const pw2 = document.getElementById('password2')
+            const username = document.getElementById('username')
+            const userRegex=/^[a-zA-Z0-9_-]{4,16}$/
+            if (pw1.value != pw2.value) {
+                alert("密码与确认密码不一致！");
+                pw1.focus();
+                return false;
+            }
+            if (!userRegex.test(username.value)) {
+                alert("账号格式错误！");
+                username.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
 <div class="register-container">
     <h2>注册</h2>
     <!-- 注册表单 -->
-    <form action=<%=request.getContextPath()%>/reg method="post" id="regs" class="reg">
+    <form action=<%=request.getContextPath()%>/reg method="post" id="regs" class="reg" onsubmit="return check()">
         <div class="input-field">
             <label for="username">账号：</label>
-            <input type="text" id="username" name="username" placeholder="请输入账号" required>
+            <input type="text" id="username" name="username" placeholder="请输入账号,4到16位(字母,数字,下划线,减号)"
+                   required>
         </div>
         <div class="input-field">
             <label for="password">密码：</label>
@@ -29,7 +49,7 @@
         </div>
         <div class="input-field">
             <label for="password">请再次输入密码：</label>
-            <input type="password" id="password2" name="password2" placeholder="请输入密码" required>
+            <input type="password" id="password2" name="password2" required>
         </div>
 
         <button type="submit" id="but" class="btn">注册</button>
