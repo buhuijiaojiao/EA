@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./view/welcome.css">
 </head>
 <body>
+<a href=<%=request.getContextPath()%>/logout>退出登录</a>
 <div class="dashboard">
     <!-- 左侧导航栏 -->
     <div class="sidebar">
