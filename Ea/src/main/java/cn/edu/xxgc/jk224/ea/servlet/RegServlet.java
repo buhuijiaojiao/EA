@@ -15,6 +15,9 @@ import java.sql.SQLException;
 
 @WebServlet("/reg")
 public class RegServlet extends HttpServlet {
+
+    private static final long serialVersionUID = -2111792517260973671L;
+
     public RegServlet() {
         super();
     }
