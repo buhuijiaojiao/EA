@@ -8,10 +8,10 @@ import java.sql.Statement;
 
 public class DBUtil {
 
-    private static String drivername = "com.mysql.cj.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost:3306/ea?characterEncoding=utf8&serverTimezone=GMT%2B8";
-    private static String user = "root";
-    private static String password = "123456";
+    private static final String drivername = "com.mysql.cj.jdbc.Driver";
+    private static final String url = "jdbc:mysql://localhost:3306/ea?characterEncoding=utf8&serverTimezone=GMT%2B8";
+    private static final String user = "root";
+    private static final String password = "123456";
 
     // 驱动只需注册一次，放到静态代码块中，仅在加载类时执行一次。
     static {
