@@ -9,21 +9,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 @WebServlet("/reg")
 public class RegServlet extends HttpServlet {
-
-    public void init() throws ServletException {
-        super.init();
+    public RegServlet() {
+        super();
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html; charset=UTF-8");
-        PrintWriter pw=resp.getWriter();
-        pw.println("奥里给");
-        pw.println("damn");
+    protected void doGet(HttpServletRequest request, HttpServletResponse  response) throws ServletException, IOException {
+         response.setContentType("text/html; charset=UTF-8");
 
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse  response) throws ServletException, IOException {
+        doGet(request,response);
     }
 
     public void destroy() {

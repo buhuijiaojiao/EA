@@ -15,20 +15,20 @@ import java.sql.*;
 public class LoginServlet extends HttpServlet {
 
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=utf-8");
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
         //初步校验
         if (username.length()==0 || password.length()==0 ) {
             //重定向
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
             return;
         }
         ServletContext application = this.getServletContext();
-        PrintWriter out = resp.getWriter();
-        HttpSession session = req.getSession();
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
 
         // 获取用户注册时的密码
         String e_pwd = "";
@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
             //创建cookie
             Cookie c1 = new Cookie("username", username);
             Cookie c2 = new Cookie("password", password);
-            if (req.getParameter("remember") != null) {
+            if (request.getParameter("remember") != null) {
                 // 用户名和密码写入cookie
                 c1.setMaxAge(30 * 60);
                 c2.setMaxAge(30 * 60);
@@ -67,28 +67,28 @@ public class LoginServlet extends HttpServlet {
                 c1.setMaxAge(0);
                 c2.setMaxAge(0);
             }
-            c1.setPath(req.getContextPath());
-            c2.setPath(req.getContextPath());
+            c1.setPath(request.getContextPath());
+            c2.setPath(request.getContextPath());
 
-            resp.addCookie(c1);
-            resp.addCookie(c2);
+            response.addCookie(c1);
+            response.addCookie(c2);
 
             //重定向到首页
-            resp.sendRedirect(req.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
 
 
         } else {  // 登录失败
             System.out.println("用户名或密码错误！登录失败");
-            out.print("用户名或密码错误！3秒后跳转到<a href='" + req.getContextPath() + "/login.jsp'>登录</a>页面。");
+            out.print("用户名或密码错误！3秒后跳转到<a href='" + request.getContextPath() + "/login.jsp'>登录</a>页面。");
 
-            resp.setHeader("refresh", "3;" + req.getContextPath() + "/login.jsp");
+            response.setHeader("refresh", "3;" + request.getContextPath() + "/login.jsp");
         }
 
 
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse  response) throws ServletException, IOException {
+        doGet(request,response);
     }
 
 }
