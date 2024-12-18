@@ -42,8 +42,8 @@ public class AddStudentServlet extends HttpServlet {
             pstmt.setString(1, student.getId());
             pstmt.setString(2, student.getName());
             pstmt.setString(3, student.getSex());
-            pstmt.setString(3, student.getCollege());
-            pstmt.setString(3, student.getMajor());
+            pstmt.setString(4, student.getCollege());
+            pstmt.setString(5, student.getMajor());
             rows = pstmt.executeUpdate();
             DBUtil.destory(conn, pstmt, null);
         } catch (SQLException e) {

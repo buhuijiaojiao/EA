@@ -31,6 +31,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version> <!-- 确保使用兼容的版本 -->
         </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>9.0.96</version>
+        </dependency>
     </dependencies>
 
 
