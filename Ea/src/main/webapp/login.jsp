@@ -31,7 +31,7 @@
         <input type="text" name="username" placeholder="账号">
         <input type="password" name="password" placeholder="密码">
         <span class="remember">记住密码
-        <input type="checkbox" name="remember">
+        <input type="checkbox" name="remember" value="1">
         </span>
         <button type="submit">登录</button>
     </form>
