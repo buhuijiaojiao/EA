@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +70,7 @@
 <div class="container">
     <h1>添加学生信息</h1>
     <form action="<%=request.getContextPath()%>/add-student" method="post" onsubmit="checkForm()">
-<%--       学号--%>
+        <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
             <input type="text" id="number" name="Sid" placeholder="请输入姓名" required>

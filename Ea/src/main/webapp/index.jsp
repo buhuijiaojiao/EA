@@ -53,7 +53,6 @@
                         return;
                     }
                 %>
-
                 <%
                     //                   提取request域中的学生集合并遍历
                     for (Student student : students) {

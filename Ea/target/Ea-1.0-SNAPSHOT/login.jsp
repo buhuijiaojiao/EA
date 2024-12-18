@@ -23,7 +23,7 @@
     String username = "";
     String password = "";
 
-    Cookie cookies[] = request.getCookies();
+    Cookie[] cookies = request.getCookies();
     if(cookies != null) {
         for(Cookie c:cookies) {
             if(c.getName().equals("username")) {

@@ -48,17 +48,11 @@
                     HashSet<Student> students = (HashSet<Student>) request.getAttribute("studentInfo");
                     if (students == null)
                         return;
-                    if(students.size() == 0) {
-                    	out.print("<p style='color: red;text-align:center;font-size:30px;'>暂无数据！</p>");
-                    	return;
+                    if (students.size() == 0) {
+                        out.print("<p style='color: red;text-align:center;font-size:30px;'>暂无数据！</p>");
+                        return;
                     }
                 %>
-                <!-- 现有学生信息 -->
-                <%--                <div class="student-item">--%>
-                <%--                    <span class="student-info">姓名: 张三 | 性别: 男 | 院系: 计算机学院 | 专业: 软件工程</span>--%>
-                <%--                    <button class="edit-btn">修改</button>--%>
-                <%--                    <button class="delete-btn">删除</button>--%>
-                <%--                </div>--%>
                 <%
                     //                   提取request域中的学生集合并遍历
                     for (Student student : students) {
