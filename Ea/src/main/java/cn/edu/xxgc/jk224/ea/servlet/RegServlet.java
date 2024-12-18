@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 @WebServlet("/reg")
 public class RegServlet extends HttpServlet {
@@ -26,11 +27,16 @@ public class RegServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        if (username.length() == 0 || password.length() == 0) {
-            response.sendRedirect(request.getContextPath() + "/reg.jsp");
+        //校验
+        String regexUsername="^[a-zA-Z0-9_-]{4,16}$";
+//        String regexPassword="";
+        if (!Pattern.matches(regexUsername,username) || password.length() == 0) {
+            response.sendRedirect(request.getContextPath() + "/regist.jsp");
             return;
         }
+
+
+
 
         PrintWriter out = response.getWriter();
 
