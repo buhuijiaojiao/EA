@@ -36,7 +36,7 @@
     </form>
     <!-- 登录提示 -->
     <div class="login-link">
-        已有账号？<a href="login.jsp">点击登录</a>
+        已有账号？<a href="login.jsp">点击登录。</a>
     </div>
 </div>
 </body>
