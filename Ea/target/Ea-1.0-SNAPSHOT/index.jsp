@@ -23,9 +23,11 @@
     <div class="sidebar">
         <h2>功能选项</h2>
         <ul>
-            <li><a href="#" id="student-management" onclick="showContent('students')">学生管理</a></li>
-            <li><a href="#" id="course-management" onclick="showContent('courses')">课程管理</a></li>
-            <li><a href="#" id="student-select-management" onclick="showContent('checkcourses')">查看课程</a></li>
+            <%--            默认显示该页面，隐藏其他页面，获取焦点--%>
+            <li><a href="<%=request.getContextPath()%>/set-student" id="student-management"
+                   onclick="showContent('students')">学生管理</a></li>
+            <%--            <li><a href="#" id="course-management" onclick="showContent('courses')">选课</a></li>--%>
+            <%--            <li><a href="#" id="student-select-management" onclick="showContent('checkcourses')">课程管理</a></li>--%>
         </ul>
     </div>
 
@@ -41,7 +43,7 @@
             <div class="header">
                 <h1>学生管理</h1>
                 <a href=<%=request.getContextPath()%>/set-student>查询所有学生信息</a>
-                <a href=<%=request.getContextPath()%>添加学生</a>
+                <a href=<%=request.getContextPath()%>/add-student.jsp>添加学生</a>
             </div>
             <div class="student-list">
                 <%
@@ -58,7 +60,15 @@
                     for (Student student : students) {
                 %>
                 <div class="student-item">
-                    <span class="student-info">学号: <%=student.getId() %> | 姓名: <%=student.getName() %> | 性别: <%=student.getSex() %> | 院系: <%=student.getCollege() %> | 专业: <%=student.getMajor() %></span>
+
+                    <span class="student-info">学号: <%=student.getId() %> |
+                                               姓名: <%=student.getName() %> |
+                                               性别: <%=student.getSex() %> |
+                                               院系: <%=student.getCollege() %> |
+                                               专业: <%=student.getMajor() %>
+                        <span class="del-edit"><a  href=<%=request.getContextPath()%>/edit-student.jsp?Sid=<%=student.getId() %>&studentName=<%=student.getName() %>&studentSex=<%=student.getSex() %>&college=<%=student.getCollege() %>&studentMajor=<%=student.getMajor() %>>修改</a></span>
+                            <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
+                    </span>
                     <%--                           <a href=editstudent.jsp?id=<%=student.getId()%>>修改</a>--%>
                     <%--                           <a href=deletestudent.jsp?id=<%=student.getId()%>>删除</a>--%>
                 </div>
@@ -70,12 +80,12 @@
 
         <!-- 课程管理内容 -->
         <div id="courses" class="content-section hidden">
-            <h1>课程管理</h1>
-            <p>这里可以展示课程信息。</p>
+            <h1>选课</h1>
+
         </div>
         <div id="checkcourses" class="content-section hidden">
-            <h1>查看课程</h1>
-            <p>这里可以展示课程信息。</p>
+            <h1>课程管理</h1>
+            <%--            <span class="student-info">课程ID:<%=course.getId() %> | 课程内容:<%=crouse.getContext() %> </span>--%>
         </div>
     </div>
 
@@ -83,4 +93,21 @@
 
 
 </body>
+<script>
+    // 显示指定内容区，并隐藏其他内容区
+    function showContent(sectionId) {
+        // 获取所有内容区元素
+        const sections = document.querySelectorAll(".content-section");
+
+        // 遍历内容区，隐藏不匹配的内容
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.remove("hidden"); // 显示目标内容
+            } else {
+                section.classList.add("hidden"); // 隐藏其他内容
+            }
+        });
+    }
+</script>
+
 </html>

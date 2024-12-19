@@ -73,7 +73,7 @@
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
-            <input type="text" id="number" name="Sid" placeholder="请输入姓名" required>
+            <input type="text" id="number" name="Sid" placeholder="请输入学号" required>
         </div>
         <!-- 姓名 -->
         <div class="form-group">

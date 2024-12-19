@@ -131,27 +131,23 @@ body {
     color: #333;
 }
 
-.edit-btn, .delete-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-}
-
-.edit-btn:hover {
-    background-color: #0056b3;
-}
-
-.delete-btn:hover {
-    background-color: #ff4d4d;
-}
-
 /* 隐藏内容 */
 .hidden {
     display: none;
+}
+.student-info .del-edit {
+    display: inline-block;
+    background-color: #f44336;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s; }
+.student-info .del-edit a {
+    text-decoration: none;
+    color: white;
+}
+
+.student-info .del-edit:hover {
+    background-color: #d32f2f;
 }
