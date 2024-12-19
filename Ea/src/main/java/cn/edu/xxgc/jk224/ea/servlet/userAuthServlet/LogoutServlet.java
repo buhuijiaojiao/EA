@@ -1,4 +1,4 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.userAuthServlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LogoutServlet
  */
-@WebServlet("/logout")
+@WebServlet("/auth/logout")
 public class LogoutServlet extends HttpServlet {
     private static final long serialVersionUID = -8968779116569017629L;
 

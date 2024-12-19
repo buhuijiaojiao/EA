@@ -1,5 +1,6 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.studentManageServlet;
 
+import cn.edu.xxgc.jk224.ea.entity.Student;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -11,38 +12,44 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-@WebServlet("/EaSystem/auth/edit-Course")
-public class EditCourse extends HttpServlet {
-    @Override
+@WebServlet("/edit-student")
+public class EditStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        String id = request.getParameter("id");
-        String name = request.getParameter("name");
+        String id = request.getParameter("Sid");
+        String name = request.getParameter("studentName");
+        String sex = request.getParameter("studentSex");
+        String college = request.getParameter("college");
+        String major = request.getParameter("studentMajor");
+        Student student = new Student(id, name, sex, college, major);
 
-        Connection conn;
         int rows = 0;
         try {
-            //注册sql驱动
-            conn = DBUtil.getConnection();
+            Connection conn = DBUtil.getConnection();
 
-            String sql = "update `course` set `cname` = ? where `id` = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, name);
-            stmt.setString(2, id);
+            String sql = "update `student` set `sname` = ? `ssex` = ? `scollege` = ? `smajor` = ? where `Sid` = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, student.getName());
+            pstmt.setString(2, student.getSex());
+            pstmt.setString(3, student.getCollege());
+            pstmt.setString(4, student.getMajor());
+
             //executeUpdate()方法用于对于执行sql语句INSERT、UPDATE 或 DELETE 语句的效果是修改表中零行或多行中的一列或多列。
             //executeUpdate  的返回值是一个整数（int），指示受影响的行数（即更新计数）。
-            rows = stmt.executeUpdate();
+            rows = pstmt.executeUpdate();
 
-            //注消sql驱动
-            DBUtil.destory(conn, stmt, null);
+            //释放资源
+            DBUtil.destory(conn, pstmt, null);
         }
         catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if(rows > 0) {
-            response.sendRedirect(request.getContextPath()+"/jsp/showcourse.jsp");
+            response.sendRedirect(request.getContextPath()+"/index.jsp");
+        }else {
+            //修改失败
         }
     }
 

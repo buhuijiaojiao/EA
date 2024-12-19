@@ -1,4 +1,4 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.studentManageServlet;
 
 import cn.edu.xxgc.jk224.ea.entity.Student;
 import cn.edu.xxgc.jk224.ea.util.*;
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/set-student")
-public class ListStudentServlet extends HttpServlet {
-    public ListStudentServlet() {
+public class SetStudentServlet extends HttpServlet {
+    public SetStudentServlet() {
         super();
 
     }

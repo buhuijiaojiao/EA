@@ -1,4 +1,4 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.userAuthServlet;
 
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 
-@WebServlet("/login")
+@WebServlet("/auth/login")
 public class LoginServlet extends HttpServlet {
 
     private static final long serialVersionUID = 5366006404953860526L;

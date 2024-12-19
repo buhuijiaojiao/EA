@@ -1,4 +1,4 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.courseManageServlet;
 
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
@@ -12,9 +12,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-@WebServlet("/EaSystem/auth/add-Course")
-public class AddCourse extends HttpServlet {
-    @Override
+
+@WebServlet("/add-course")
+public class AddCourseServlet extends HttpServlet {
+    public AddCourseServlet() {
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -25,10 +28,10 @@ public class AddCourse extends HttpServlet {
         try {
             Connection conn = DBUtil.getConnection();
 
-            String sql = "insert into `course` (`id`, `name`) VALUES (?, ?)";
+            String sql = "insert into `course` (`Cid`, `cname`) VALUES (?, ?)";
             //创建sql操作对象--stmt
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1,id);
+            stmt.setString(1, id);
             stmt.setString(2, name);
 
 
@@ -38,18 +41,18 @@ public class AddCourse extends HttpServlet {
 
             //释放sql
             DBUtil.destory(conn, stmt, null);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        if(rows > 0) {
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+        if (rows > 0) {
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
+        } else {
+            //添加失败
         }
 
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);

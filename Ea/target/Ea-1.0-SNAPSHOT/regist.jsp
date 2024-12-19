@@ -37,7 +37,7 @@
 <div class="register-container">
     <h2>注册</h2>
     <!-- 注册表单 -->
-    <form action=<%=request.getContextPath()%>/reg method="post" id="regs" class="reg" onsubmit="return check()">
+    <form action=<%=request.getContextPath()%>/auth/reg method="post" id="regs" class="reg" onsubmit="return check()">
         <div class="input-field">
             <label for="username">账号：</label>
             <input type="text" id="username" name="username" placeholder="请输入账号,4到16位(字母,数字,下划线,减号)"
