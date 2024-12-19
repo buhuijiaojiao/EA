@@ -23,9 +23,9 @@
     <div class="sidebar">
         <h2>功能选项</h2>
         <ul>
-            <li><a href="#" id="student-management" onclick="showContent('students')">学生管理</a></li>
-            <li><a href="#" id="course-management" onclick="showContent('courses')">课程管理</a></li>
-            <li><a href="#" id="student-select-management" onclick="showContent('checkcourses')">查看课程</a></li>
+            <li><a href="<%=request.getContextPath()%>/set-student" id="student-management" onclick="showContent('students')">学生管理</a></li>
+            <li><a href="<%=request.getContextPath()%>/set-student" id="course-management" onclick="showContent('courses')">选课</a></li>
+            <li><a href="<%=request.getContextPath()%>/set-student" id="student-select-management" onclick="showContent('checkcourses')">查看课程</a></li>
         </ul>
     </div>
 
@@ -59,6 +59,7 @@
                     for (Student student : students) {
                 %>
                 <div class="student-item">
+
                     <span class="student-info">学号: <%=student.getId() %> | 姓名: <%=student.getName() %> | 性别: <%=student.getSex() %> | 院系: <%=student.getCollege() %> | 专业: <%=student.getMajor() %></span>
                     <%--                           <a href=editstudent.jsp?id=<%=student.getId()%>>修改</a>--%>
                     <%--                           <a href=deletestudent.jsp?id=<%=student.getId()%>>删除</a>--%>
@@ -71,12 +72,12 @@
 
         <!-- 课程管理内容 -->
         <div id="courses" class="content-section hidden">
-            <h1>课程管理</h1>
-            <p>这里可以展示课程信息。</p>
+            <h1>选课</h1>
+
         </div>
         <div id="checkcourses" class="content-section hidden">
             <h1>查看课程</h1>
-            <p>这里可以展示课程信息。</p>
+<%--            <span class="student-info">课程ID:<%=course.getId() %> | 课程内容:<%=crouse.getContext() %> </span>--%>
         </div>
     </div>
 
@@ -84,4 +85,21 @@
 
 
 </body>
+<script>
+    // 显示指定内容区，并隐藏其他内容区
+    function showContent(sectionId) {
+        // 获取所有内容区元素
+        const sections = document.querySelectorAll(".content-section");
+
+        // 遍历内容区，隐藏不匹配的内容
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.remove("hidden"); // 显示目标内容
+            } else {
+                section.classList.add("hidden"); // 隐藏其他内容
+            }
+        });
+    }
+</script>
+
 </html>
