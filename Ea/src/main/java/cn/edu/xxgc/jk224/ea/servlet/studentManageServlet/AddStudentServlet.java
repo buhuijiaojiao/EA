@@ -1,4 +1,4 @@
-package cn.edu.xxgc.jk224.ea.servlet;
+package cn.edu.xxgc.jk224.ea.servlet.studentManageServlet;
 
 
 import cn.edu.xxgc.jk224.ea.entity.Student;

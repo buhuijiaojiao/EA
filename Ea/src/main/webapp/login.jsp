@@ -40,7 +40,7 @@
 </h1>
 <div class="login">
     <h1>登录</h1>
-    <form action=<%=request.getContextPath()%>/login method="post" onsubmit="return check()">
+    <form action=<%=request.getContextPath()%>/auth/login method="post" onsubmit="return check()">
         <input type="text" name="username" placeholder="账号" id="username">
         <input type="password" name="password" placeholder="密码" id="password">
         <span class="remember">记住密码

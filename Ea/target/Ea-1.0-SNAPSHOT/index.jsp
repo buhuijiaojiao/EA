@@ -33,7 +33,7 @@
     <div class="content">
         <!-- 顶部导航 -->
         <div class="top-bar">
-            <a href=<%=request.getContextPath()%>/logout>退出登录</a>
+            <a href=<%=request.getContextPath()%>/auth/logout>退出登录</a>
         </div>
 
         <!-- 学生管理内容 -->
@@ -41,24 +41,18 @@
             <div class="header">
                 <h1>学生管理</h1>
                 <a href=<%=request.getContextPath()%>/set-student>查询所有学生信息</a>
-                <a href=<%=request.getContextPath()%>/addstudent.jsp>添加学生</a>
+                <a href=<%=request.getContextPath()%>添加学生</a>
             </div>
             <div class="student-list">
                 <%
                     HashSet<Student> students = (HashSet<Student>) request.getAttribute("studentInfo");
                     if (students == null)
                         return;
-                    if(students.size() == 0) {
-                    	out.print("<p style='color: red;text-align:center;font-size:30px;'>暂无数据！</p>");
-                    	return;
+                    if (students.size() == 0) {
+                        out.print("<p style='color: red;text-align:center;font-size:30px;'>暂无数据！</p>");
+                        return;
                     }
                 %>
-                <!-- 现有学生信息 -->
-                <%--                <div class="student-item">--%>
-                <%--                    <span class="student-info">姓名: 张三 | 性别: 男 | 院系: 计算机学院 | 专业: 软件工程</span>--%>
-                <%--                    <button class="edit-btn">修改</button>--%>
-                <%--                    <button class="delete-btn">删除</button>--%>
-                <%--                </div>--%>
                 <%
                     //                   提取request域中的学生集合并遍历
                     for (Student student : students) {
