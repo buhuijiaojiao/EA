@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加学生信息</title>
+    <title>修改学生信息</title>
     <link rel="stylesheet" href="./view/addstudent.css">
     <script>
         function updateMajors() {

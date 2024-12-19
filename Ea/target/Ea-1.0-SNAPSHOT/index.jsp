@@ -67,10 +67,8 @@
                                                院系: <%=student.getCollege() %> |
                                                专业: <%=student.getMajor() %>
                         <span class="del-edit"><a  href=<%=request.getContextPath()%>/edit-student.jsp?Sid=<%=student.getId() %>&studentName=<%=student.getName() %>&studentSex=<%=student.getSex() %>&college=<%=student.getCollege() %>&studentMajor=<%=student.getMajor() %>>修改</a></span>
-                            <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
+                        <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
                     </span>
-                    <%--                           <a href=editstudent.jsp?id=<%=student.getId()%>>修改</a>--%>
-                    <%--                           <a href=deletestudent.jsp?id=<%=student.getId()%>>删除</a>--%>
                 </div>
                 <% } %>
 
