@@ -41,7 +41,7 @@
             <div class="header">
                 <h1>学生管理</h1>
                 <a href=<%=request.getContextPath()%>/set-student>查询所有学生信息</a>
-                <a href=<%=request.getContextPath()%>添加学生</a>
+                <a href=<%=request.getContextPath()%>>添加学生</a>
             </div>
             <div class="student-list">
                 <%

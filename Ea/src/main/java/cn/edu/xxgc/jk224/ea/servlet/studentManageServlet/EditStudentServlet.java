@@ -43,7 +43,6 @@ public class EditStudentServlet extends HttpServlet {
             DBUtil.destory(conn, pstmt, null);
         }
         catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         if(rows > 0) {
