@@ -48,7 +48,7 @@ public class EditStudentServlet extends HttpServlet {
             e.printStackTrace();
         }
         if(rows > 0) {
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/student.jsp");
         }else {
             //修改失败
         }

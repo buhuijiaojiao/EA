@@ -23,9 +23,10 @@
     <div class="sidebar">
         <h2>功能选项</h2>
         <ul>
-            <li class="ccc"><a href="<%=request.getContextPath()%>/index.jsp">学生管理</a></li>
+            <li class="ccc"><a href="<%=request.getContextPath()%>/student.jsp">学生管理</a></li>
             <%--            <li><a href="#" id="course-management" onclick="showContent('courses')">选课</a></li>--%>
             <li class="ccc"><a href="<%=request.getContextPath()%>/course.jsp">课程管理</a></li>
+            <li><a href="#" id="course-management">选课</a></li>
         </ul>
     </div>
 
@@ -33,7 +34,7 @@
     <div class="content">
         <!-- 顶部导航 -->
         <div class="top-bar">
-            <a href=<%=request.getContextPath()%>/auth/logout>退出登录</a>
+            <a href=<%=request.getContextPath()%>/index.jsp>退回首页</a>
         </div>
 
         <!-- 学生管理内容 -->
@@ -63,7 +64,7 @@
                     <span class="course-info">书籍编号: <%=course.getId() %> |
                                                课程内容: <%=course.getName() %>
                         <span class="del-edit"><a
-                                href=<%=request.getContextPath()%>/edit-course?id=<%=course.getId() %>&name=<%=course.getName() %>>修改</a></span>
+                                href=<%=request.getContextPath()%>/edit-course.jsp?id=<%=course.getId() %>&name=<%=course.getName() %>>修改</a></span>
                         <span class="del-edit"><a href=<%=request.getContextPath()%>/del-course?id=<%=course.getId() %>>删除</a></span>
                     </span>
             </div>

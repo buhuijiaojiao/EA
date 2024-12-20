@@ -49,7 +49,7 @@ public class SetStudentServlet extends HttpServlet {
 
         request.setAttribute("studentInfo", students);
         //转发请求到首页
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/student.jsp").forward(request, response);
 
     }
 

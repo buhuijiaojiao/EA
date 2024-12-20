@@ -9,23 +9,23 @@
 <html>
 <head>
     <title>编辑课程</title>
-    <link rel="stylesheet" href="./view/index.css">
+    <link rel="stylesheet" href="view/add-edit.css">
 </head>
 <body>
 <div class="container">
     <h1>编辑学生信息</h1>
-    <form action="<%=request.getContextPath()%>/add-course" method="post">
+    <form action="<%=request.getContextPath()%>/edit-course" method="post">
         <%--课程ID--%>
         <div class="form-group">
             <label for="name">ID：</label>
-            <input type="text" id="id" name="Cid" value="<%=request.getParameter("Cid") %>"
-                   placeholder="<%=request.getParameter("Cid") %>" required>
+            <input type="text" id="id" name="Cid" value="<%=request.getParameter("id") %>"
+                   readonly>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">课程内容：</label>
-            <input type="text" id="name" name="courseName" value="<%=request.getParameter("courseName") %>"
-                   placeholder="<%=request.getParameter("courseName") %>" required>
+            <input type="text" id="name" name="courseName" value="<%=request.getParameter("name") %>"
+                   placeholder="请输入课程名" required>
         </div>
 
 
