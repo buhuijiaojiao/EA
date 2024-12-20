@@ -68,7 +68,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>添加学生信息</h1>
+    <h1>修改学生信息</h1>
     <form action="<%=request.getContextPath()%>/edit-student" method="post" onsubmit="checkForm()">
         <%--学号--%>
         <div class="form-group">

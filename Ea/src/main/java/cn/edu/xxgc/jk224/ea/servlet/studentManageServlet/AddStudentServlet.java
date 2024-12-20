@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,7 +23,9 @@ public class AddStudentServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out=response.getWriter();
         //获取表单输入的学生信息
         String id = request.getParameter("Sid");
         String name = request.getParameter("studentName");
@@ -53,6 +56,8 @@ public class AddStudentServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/student.jsp");
         } else {
             //添加失败
+            out.println("<script>alert('添加失败,可能添加学生的学号已存在！')</script>");
+            out.println("<script>window.location.href='/Ea_war_exploded/add-student.jsp'</script>");
         }
     }
 

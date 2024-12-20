@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -21,7 +22,9 @@ public class DelStudentServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.getWriter().append("Served at: ").append(request.getContextPath());
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        PrintWriter out=response.getWriter();
         String id = request.getParameter("Sid");
         int rows = 0;
         try {
@@ -43,6 +46,9 @@ public class DelStudentServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/student.jsp");
         } else {
             //删除失败
+            out.println("<script>alert('删除失败')</script>");
+            out.println("<script>window.location.href='/Ea_war_exploded/student.jsp'</script>");
+
         }
     }
 
