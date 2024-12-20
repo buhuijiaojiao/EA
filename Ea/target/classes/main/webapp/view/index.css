@@ -131,10 +131,6 @@ body {
     color: #333;
 }
 
-/* 隐藏内容 */
-.hidden {
-    display: none !important;
-}
 .student-info .del-edit {
     display: inline-block;
     background-color: #f44336;
@@ -142,7 +138,8 @@ body {
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
-    transition: background-color 0.3s; }
+    transition: background-color 0.3s;
+}
 .student-info .del-edit a {
     text-decoration: none;
     color: white;
@@ -172,7 +169,7 @@ body {
     font-size: 1.2rem;
     color: #333;
 }
-.student-info .del-edit {
+.course-info .del-edit {
     display: inline-block;
     background-color: #f44336;
     padding: 8px 16px;
