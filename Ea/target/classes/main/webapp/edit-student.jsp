@@ -11,8 +11,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>修改学生信息</title>
-    <link rel="stylesheet" href="./view/addstudent.css">
+    <title>添加学生信息</title>
+    <link rel="stylesheet" href="view/add-edit.css">
     <script>
         function updateMajors() {
             const department = document.getElementById("department").value;
