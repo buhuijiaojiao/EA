@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>编辑学生信息</h1>
+    <h1>编辑课程信息</h1>
     <form action="<%=request.getContextPath()%>/edit-course" method="post">
         <%--课程ID--%>
         <div class="form-group">

@@ -36,7 +36,7 @@
         <div class="top-bar">
             <a href=<%=request.getContextPath()%>/auth/logout>退出登录</a>
         </div>
-
+    <h1 align="center">Welcome!!!</h1>
 
     </div>
 
