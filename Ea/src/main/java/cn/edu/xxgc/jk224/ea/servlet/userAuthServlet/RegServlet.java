@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.regex.Pattern;
 
 @WebServlet("/auth/reg")
@@ -51,7 +52,8 @@ public class RegServlet extends HttpServlet {
             pstmt.setString(2, password);
 
             row = pstmt.executeUpdate();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -63,8 +65,8 @@ public class RegServlet extends HttpServlet {
             out.print("注册成功！");
             response.sendRedirect(request.getContextPath() + "/login.jsp");
         } else {
-            out.print("注册失败");
-            response.sendRedirect(request.getContextPath() + "/regist.jsp");
+            out.println("<script>alert('注册失败,可能注册的用户名已存在！')</script>");
+            out.println("<script>window.location.href='/Ea_war_exploded/regist.jsp'</script>");
         }
 
     }

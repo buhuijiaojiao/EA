@@ -9,15 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 @WebServlet("/edit-course")
 public class EditCourseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
         String id = request.getParameter("Cid");
         String name = request.getParameter("courseName");
         Course course = new Course(id, name);
@@ -35,15 +39,16 @@ public class EditCourseServlet extends HttpServlet {
 
             //释放资源
             DBUtil.destory(conn, stmt, null);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        if(rows > 0) {
-            response.sendRedirect(request.getContextPath()+"/course.jsp");
-        }else {
+        if (rows > 0) {
+            response.sendRedirect(request.getContextPath() + "/course.jsp");
+        } else {
             //修改失败
+            out.println("<script>alert('修改失败')</script>");
+            out.println("<script>window.location.href='/Ea_war_exploded/edit-course.jsp'</script>");
         }
     }
 

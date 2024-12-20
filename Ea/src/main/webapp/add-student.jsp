@@ -54,15 +54,23 @@
         }
 
         function checkForm() {
+            const id = document.getElementById("number").value;
             const name = document.getElementById("name").value;
             const gender = document.getElementById("gender").value;
             const department = document.getElementById("department").value;
             const major = document.getElementById("major").value;
+            const idRegex = /^[0-9]{10}$/
+            const nameRegex = /^[a-zA-Z0-9_-]{4,16}$/
 
             if (!name || !gender || !department || !major) {
                 alert("请填写完整信息！");
                 return false;
             }
+            // if (!idRegex.test(id.value)) {
+            //     alert("id格式错误！");
+            //     id.focus();
+            //     return false;
+            // }
         }
     </script>
 </head>

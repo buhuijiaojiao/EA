@@ -17,7 +17,9 @@ import java.sql.SQLException;
 public class EditStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
+        PrintWriter out=response.getWriter();
         String id = request.getParameter("Sid");
         String name = request.getParameter("studentName");
         String sex = request.getParameter("studentSex");
@@ -51,6 +53,8 @@ public class EditStudentServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/student.jsp");
         }else {
             //修改失败
+            out.println("<script>alert('修改失败')</script>");
+            out.println("<script>window.location.href='/Ea_war_exploded/edit-student.jsp'</script>");
         }
     }
 

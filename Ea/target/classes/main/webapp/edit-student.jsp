@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>修改学生信息</title>
-    <link rel="stylesheet" href="./view/addstudent.css">
+    <link rel="stylesheet" href="./view/add-edit.css">
     <script>
         function updateMajors() {
             const department = document.getElementById("department").value;
@@ -68,7 +68,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>添加学生信息</h1>
+    <h1>修改学生信息</h1>
     <form action="<%=request.getContextPath()%>/edit-student" method="post" onsubmit="checkForm()">
         <%--学号--%>
         <div class="form-group">
