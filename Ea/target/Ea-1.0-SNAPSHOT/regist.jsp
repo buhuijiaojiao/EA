@@ -18,6 +18,7 @@
             const pw2 = document.getElementById('password2')
             const username = document.getElementById('username')
             const userRegex = /^[a-zA-Z0-9_-]{4,16}$/
+            const pwRegex = /^[a-zA-Z0-9_-]{4,16}$/
             if (pw1.value != pw2.value) {
                 alert("密码与确认密码不一致！");
                 pw1.focus();
@@ -26,6 +27,11 @@
             if (!userRegex.test(username.value)) {
                 alert("账号格式错误！");
                 username.focus();
+                return false;
+            }
+            if (!pwRegex.test(pw1.value)) {
+                alert("密码格式错误！");
+                pw1.focus();
                 return false;
             }
             return true;
@@ -45,7 +51,7 @@
         </div>
         <div class="input-field">
             <label for="password">密码：</label>
-            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+            <input type="password" id="password" name="password" placeholder="请输入密码(4-16位字母,数字,下划线,减号)" required>
         </div>
         <div class="input-field">
             <label for="password">请再次输入密码：</label>

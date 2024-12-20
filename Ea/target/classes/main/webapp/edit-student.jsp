@@ -54,22 +54,23 @@
         }
 
         function checkForm() {
-            const name = document.getElementById("name").value;
-            const gender = document.getElementById("gender").value;
-            const department = document.getElementById("department").value;
-            const major = document.getElementById("major").value;
 
-            if (!name || !gender || !department || !major) {
-                alert("请填写完整信息！");
+            // 姓名正则表达式
+            const nameRegex = /^.{1,20}$/;
+            const name = document.getElementById('name')
+            if (!nameRegex.test(name.value)) {
+                alert("姓名格式错误！");
+                name.focus();
                 return false;
             }
+            return true;
         }
     </script>
 </head>
 <body>
 <div class="container">
     <h1>修改学生信息</h1>
-    <form action="<%=request.getContextPath()%>/edit-student" method="post" onsubmit="checkForm()">
+    <form action="<%=request.getContextPath()%>/edit-student" method="post" onsubmit="return checkForm()">
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>

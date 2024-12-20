@@ -55,24 +55,12 @@
 
         //校验
         function checkForm() {
-            const name = document.getElementById("name").value;
-            const gender = document.getElementById("gender").value;
-            const department = document.getElementById("department").value;
-            const major = document.getElementById("major").value;
 
-            if (!name || !gender || !department || !major) {
-                alert("请填写完整信息！");
-                return false;
-            }
-            //正则校验
-            checkfrom()();
-        }
-
-        function checkfrom() {
+            // 学号和姓名正则表达式
             const idRegex = /^[0-9]{1,10}$/
             const nameRegex = /^.{1,20}$/;
-            const id = document.getElementById('Sid')
-            const name = document.getElementById('studntName')
+            const id = document.getElementById('number')
+            const name = document.getElementById('name')
             if (!idRegex.test(id.value)) {
                 alert("学号格式错误！");
                 id.focus();
@@ -85,16 +73,18 @@
             }
             return true;
         }
+
+
     </script>
 </head>
 <body>
 <div class="container">
     <h1>添加学生信息</h1>
-    <form action="<%=request.getContextPath()%>/add-student" method="post" onsubmit="checkForm()">
+    <form action="<%=request.getContextPath()%>/add-student" method="post" onsubmit="return checkForm()">
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
-            <input type="text" id="number" name="Sid" placeholder="请输入学号(1-10位)" required>
+            <input type="text" id="number" name="Sid" placeholder="请输入学号(1-10位数字)" required>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
