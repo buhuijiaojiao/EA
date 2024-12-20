@@ -11,10 +11,12 @@ body {
     height: 100vh;
 
 }
+
 .ccc {
     flex-basis: 100%;
     text-align: center;
 }
+
 /* 登录面板样式 */
 .login {
     background: rgba(255, 255, 255, 0.2);
@@ -25,6 +27,7 @@ body {
     width: 300px;
     text-align: center;
 }
+
 /*from标题*/
 .login h1 {
     margin-bottom: 20px;
@@ -58,6 +61,7 @@ body {
 .login button:hover {
     background-color: #574b90;
 }
+
 .remember {
     font-size: 12px !important;
     text-align: center;
@@ -77,6 +81,7 @@ body {
 .register a:hover {
     text-decoration: underline;
 }
+
 .null {
     flex-basis: 100%;
     height: 100px;

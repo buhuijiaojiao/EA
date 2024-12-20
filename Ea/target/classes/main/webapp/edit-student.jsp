@@ -6,13 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>添加学生信息</title>
-    <link rel="stylesheet" href="./view/addstudent.css">
+    <link rel="stylesheet" href="view/add-edit.css">
     <script>
         function updateMajors() {
             const department = document.getElementById("department").value;
@@ -73,19 +73,22 @@
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
-            <input type="text" id="number" name="Sid" placeholder="请输入学号" value="<%=request.getParameter("Sid") %>" readonly>
+            <input type="text" id="number" name="Sid" placeholder="请输入学号" value="<%=request.getParameter("Sid") %>"
+                   readonly>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">姓名：</label>
-            <input type="text" id="name" name="studentName" placeholder="请输入姓名" value="<%=request.getParameter("studentName") %>" required>
+            <input type="text" id="name" name="studentName" placeholder="请输入姓名"
+                   value="<%=request.getParameter("studentName") %>" required>
         </div>
 
         <!-- 性别 -->
         <div class="form-group">
             <label for="gender">性别：</label>
-            <select id="gender" name="studentSex"  required>
-                <option value="<%=request.getParameter("studentSex") %>"><%=request.getParameter("studentSex") %></option>
+            <select id="gender" name="studentSex" required>
+                <option value="<%=request.getParameter("studentSex") %>"><%=request.getParameter("studentSex") %>
+                </option>
                 <option value="男">男</option>
                 <option value="女">女</option>
             </select>
@@ -95,7 +98,8 @@
         <div class="form-group">
             <label for="department">院系：</label>
             <select id="department" name="college" onchange="updateMajors()" required>
-                <option value="<%=request.getParameter("college") %>"><%=request.getParameter("college") %></option>
+                <option value="<%=request.getParameter("college") %>"><%=request.getParameter("college") %>
+                </option>
                 <option value="信息工程学院">信息工程学院</option>
                 <option value="外国语学院">外国语学院</option>
                 <option value="商学院">商学院</option>
@@ -107,7 +111,8 @@
         <div class="form-group">
             <label for="major">专业：</label>
             <select id="major" name="studentMajor" required>
-                <option value="<%=request.getParameter("studentMajor") %>"><%=request.getParameter("studentMajor") %></option>
+                <option value="<%=request.getParameter("studentMajor") %>"><%=request.getParameter("studentMajor") %>
+                </option>
                 <!-- 专业选项将由 JavaScript 动态更新 -->
             </select>
         </div>
