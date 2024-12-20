@@ -53,6 +53,7 @@
             }
         }
 
+        //校验
         function checkForm() {
             const name = document.getElementById("name").value;
             const gender = document.getElementById("gender").value;
@@ -63,6 +64,26 @@
                 alert("请填写完整信息！");
                 return false;
             }
+            //正则校验
+            checkfrom()();
+        }
+
+        function checkfrom() {
+            const idRegex = /^[0-9]{1,10}$/
+            const nameRegex = /^.{1,20}$/;
+            const id = document.getElementById('Sid')
+            const name = document.getElementById('studntName')
+            if (!idRegex.test(id.value)) {
+                alert("学号格式错误！");
+                id.focus();
+                return false;
+            }
+            if (!nameRegex.test(name.value)) {
+                alert("姓名格式错误！");
+                name.focus();
+                return false;
+            }
+            return true;
         }
     </script>
 </head>
@@ -73,12 +94,12 @@
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
-            <input type="text" id="number" name="Sid" placeholder="请输入学号" required>
+            <input type="text" id="number" name="Sid" placeholder="请输入学号(1-10位)" required>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">姓名：</label>
-            <input type="text" id="name" name="studentName" placeholder="请输入姓名" required>
+            <input type="text" id="name" name="studentName" placeholder="请输入姓名(1-20位)" required>
         </div>
 
         <!-- 性别 -->

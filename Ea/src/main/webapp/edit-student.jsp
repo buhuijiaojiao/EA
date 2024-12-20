@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>修改学生信息</title>
-    <link rel="stylesheet" href="./view/addstudent.css">
+    <link rel="stylesheet" href="./view/add-edit.css">
     <script>
         function updateMajors() {
             const department = document.getElementById("department").value;
@@ -73,13 +73,14 @@
         <%--学号--%>
         <div class="form-group">
             <label for="name">学号：</label>
-            <input type="text" id="number" name="Sid" placeholder="请输入学号" value="<%=request.getParameter("Sid") %>"
+            <input type="text" id="number" name="Sid" placeholder="请输入学号(1-10位)"
+                   value="<%=request.getParameter("Sid") %>"
                    readonly>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">姓名：</label>
-            <input type="text" id="name" name="studentName" placeholder="请输入姓名"
+            <input type="text" id="name" name="studentName" placeholder="请输入姓名(1-20位)"
                    value="<%=request.getParameter("studentName") %>" required>
         </div>
 

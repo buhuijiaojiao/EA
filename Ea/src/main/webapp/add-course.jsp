@@ -14,16 +14,16 @@
 <body>
 <div class="container">
     <h1>添加课程信息</h1>
-    <form action="<%=request.getContextPath()%>/add-course" method="post">
+    <form action="<%=request.getContextPath()%>/add-course" method="post" onsubmit="return checkfrom()">
         <%--课程ID--%>
         <div class="form-group">
             <label for="name">ID：</label>
-            <input type="text" id="id" name="Cid" placeholder="请输入课程ID" required>
+            <input type="text" id="id" name="Cid" placeholder="请输入8位课程ID" required>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">课程内容：</label>
-            <input type="text" id="name" name="courseName" placeholder="请输入课程名" required>
+            <input type="text" id="name" name="courseName" placeholder="请输入1-20位课程名" required>
         </div>
 
 
@@ -35,4 +35,23 @@
 </div>
 
 </body>
+<script>
+    function checkfrom() {
+        const idRegex = /^[0-9]{5}$/
+        const nameRegex = /^.{1,20}$/;
+        const id = document.getElementById('id')
+        const name = document.getElementById('name')
+        if (!idRegex.test(id.value)) {
+            alert("课程ID格式错误！");
+            id.focus();
+            return false;
+        }
+        if (!nameRegex.test(name.value)) {
+            alert("课程名称格式错误！");
+            name.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
 </html>
