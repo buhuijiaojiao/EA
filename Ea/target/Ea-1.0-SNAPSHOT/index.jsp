@@ -26,8 +26,8 @@
         <ul>
             <%--            默认显示该页面，隐藏其他页面--%>
             <li class="ccc"><a href="<%=request.getContextPath()%>/index.jsp">学生管理</a></li>
-            <%--            <li><a href="#" id="course-management" onclick="showContent('courses')">选课</a></li>--%>
-            <li class="ccc"><a href="<%=request.getContextPath()%>/main/webapp/course.jsp">课程管理</a></li>
+                        <li><a href="#" id="course-management">选课</a></li>
+            <li class="ccc"><a href="<%=request.getContextPath()%>/course.jsp">课程管理</a></li>
         </ul>
     </div>
 
@@ -66,8 +66,10 @@
                                                性别: <%=student.getSex() %> |
                                                院系: <%=student.getCollege() %> |
                                                专业: <%=student.getMajor() %>
-                        <span class="del-edit"><a  href=<%=request.getContextPath()%>/edit-student.jsp?Sid=<%=student.getId() %>&studentName=<%=student.getName() %>&studentSex=<%=student.getSex() %>&college=<%=student.getCollege() %>&studentMajor=<%=student.getMajor() %>>修改</a></span>
-                        <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
+                        <span class="del-edit"><a
+                                href=<%=request.getContextPath()%>/edit-student.jsp?Sid=<%=student.getId() %>&studentName=<%=student.getName() %>&studentSex=<%=student.getSex() %>&college=<%=student.getCollege() %>&studentMajor=<%=student.getMajor() %>>修改</a></span>
+                        <span class="del-edit"><a
+                                href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
                     </span>
                 </div>
                 <% } %>

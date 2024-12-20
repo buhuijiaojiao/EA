@@ -43,7 +43,7 @@
             <div class="header">
                 <h1>课程管理</h1>
                 <a href=<%=request.getContextPath()%>/list-course>查询所有课程信息</a>
-                <a href=<%=request.getContextPath()%>/add-course>添加课程</a>
+                <a href=<%=request.getContextPath()%>/add-course.jsp>添加课程</a>
             </div>
             <%
                 List<Course> courses = (List<Course>) request.getAttribute("courseInfo");

@@ -17,7 +17,7 @@
             const pw1 = document.getElementById('password')
             const pw2 = document.getElementById('password2')
             const username = document.getElementById('username')
-            const userRegex=/^[a-zA-Z0-9_-]{4,16}$/
+            const userRegex = /^[a-zA-Z0-9_-]{4,16}$/
             if (pw1.value != pw2.value) {
                 alert("密码与确认密码不一致！");
                 pw1.focus();

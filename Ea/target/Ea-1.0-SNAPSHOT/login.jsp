@@ -1,15 +1,15 @@
 <%@ page language="java"
-        contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+         contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>教务管理系统</title>
     <link rel="stylesheet" href="view/login.css">
     <script>
-        function check(){
-            const name=document.getElementById('username')
-            const pw=document.getElementById('password')
-            if(name.value.length==0||pw.value.length==0){
+        function check() {
+            const name = document.getElementById('username')
+            const pw = document.getElementById('password')
+            if (name.value.length == 0 || pw.value.length == 0) {
                 alert("用户名或密码不能为空！");
                 pw.focus();
                 return false;
@@ -24,12 +24,12 @@
     String password = "";
 
     Cookie[] cookies = request.getCookies();
-    if(cookies != null) {
-        for(Cookie c:cookies) {
-            if(c.getName().equals("username")) {
+    if (cookies != null) {
+        for (Cookie c : cookies) {
+            if (c.getName().equals("username")) {
                 username = c.getValue();
             }
-            if(c.getName().equals("password")) {
+            if (c.getName().equals("password")) {
                 password = c.getValue();
             }
         }
@@ -46,7 +46,7 @@
         <span class="remember">记住密码
         <input type="checkbox" name="remember" value="1">
         </span>
-        <button type="submit" >登录</button>
+        <button type="submit">登录</button>
     </form>
 
     <div class="register">
