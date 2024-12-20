@@ -51,7 +51,8 @@
         </div>
         <div class="input-field">
             <label for="password">密码：</label>
-            <input type="password" id="password" name="password" placeholder="请输入密码(4-16位字母,数字,下划线,减号)" required>
+            <input type="password" id="password" name="password" placeholder="请输入密码(4-16位字母,数字,下划线,减号)"
+                   required>
         </div>
         <div class="input-field">
             <label for="password">请再次输入密码：</label>

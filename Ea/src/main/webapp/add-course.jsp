@@ -18,12 +18,12 @@
         <%--课程ID--%>
         <div class="form-group">
             <label for="name">ID：</label>
-            <input type="text" id="id" name="Cid" placeholder="请输入课程ID(1-8位数字)" required>
+            <input type="text" id="id" name="Cid" placeholder="请输入课程ID(1-5位数字)" required>
         </div>
         <!-- 姓名 -->
         <div class="form-group">
             <label for="name">课程内容：</label>
-            <input type="text" id="name" name="courseName" placeholder="请输入课程名(1-20位)" required>
+            <input type="text" id="name" name="courseName" placeholder="请输入课程名(1-40位)" required>
         </div>
 
 
@@ -37,8 +37,8 @@
 </body>
 <script>
     function checkfrom() {
-        const idRegex = /^[0-9]{1,8}$/
-        const nameRegex = /^.{1,20}$/;
+        const idRegex = /^[0-9]{1,5}$/
+        const nameRegex = /^.{1,40}$/;
         const id = document.getElementById('id')
         const name = document.getElementById('name')
         if (!idRegex.test(id.value)) {
