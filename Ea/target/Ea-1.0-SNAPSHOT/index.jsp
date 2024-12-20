@@ -8,12 +8,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ page import="java.util.HashSet,cn.edu.xxgc.jk224.ea.entity.*" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>教务管理系统</title>
-    <link rel="stylesheet" href="./view/welcome.css">
+    <link rel="stylesheet" href="view/index.css">
 
 </head>
 <body>
@@ -23,11 +24,10 @@
     <div class="sidebar">
         <h2>功能选项</h2>
         <ul>
-            <%--            默认显示该页面，隐藏其他页面，获取焦点--%>
-            <li><a href="<%=request.getContextPath()%>/set-student" id="student-management"
-                   onclick="showContent('students')">学生管理</a></li>
+            <%--            默认显示该页面，隐藏其他页面--%>
+            <li class="ccc"><a href="<%=request.getContextPath()%>/index.jsp">学生管理</a></li>
             <%--            <li><a href="#" id="course-management" onclick="showContent('courses')">选课</a></li>--%>
-            <%--            <li><a href="#" id="student-select-management" onclick="showContent('checkcourses')">课程管理</a></li>--%>
+            <li class="ccc"><a href="<%=request.getContextPath()%>/main/webapp/course.jsp">课程管理</a></li>
         </ul>
     </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <!-- 学生管理内容 -->
-        <div id="students" class="content-section">
+        <div id="students" class="aaa">
             <div class="header">
                 <h1>学生管理</h1>
                 <a href=<%=request.getContextPath()%>/set-student>查询所有学生信息</a>
@@ -67,47 +67,17 @@
                                                院系: <%=student.getCollege() %> |
                                                专业: <%=student.getMajor() %>
                         <span class="del-edit"><a  href=<%=request.getContextPath()%>/edit-student.jsp?Sid=<%=student.getId() %>&studentName=<%=student.getName() %>&studentSex=<%=student.getSex() %>&college=<%=student.getCollege() %>&studentMajor=<%=student.getMajor() %>>修改</a></span>
-                            <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
+                        <span class="del-edit"><a  href=<%=request.getContextPath()%>/del-student?Sid=<%=student.getId() %>>删除</a></span>
                     </span>
-                    <%--                           <a href=editstudent.jsp?id=<%=student.getId()%>>修改</a>--%>
-                    <%--                           <a href=deletestudent.jsp?id=<%=student.getId()%>>删除</a>--%>
                 </div>
                 <% } %>
 
 
             </div>
         </div>
-
-        <!-- 课程管理内容 -->
-        <div id="courses" class="content-section hidden">
-            <h1>选课</h1>
-
-        </div>
-        <div id="checkcourses" class="content-section hidden">
-            <h1>课程管理</h1>
-            <%--            <span class="student-info">课程ID:<%=course.getId() %> | 课程内容:<%=crouse.getContext() %> </span>--%>
-        </div>
     </div>
 
 </div>
-
-
 </body>
-<script>
-    // 显示指定内容区，并隐藏其他内容区
-    function showContent(sectionId) {
-        // 获取所有内容区元素
-        const sections = document.querySelectorAll(".content-section");
-
-        // 遍历内容区，隐藏不匹配的内容
-        sections.forEach(section => {
-            if (section.id === sectionId) {
-                section.classList.remove("hidden"); // 显示目标内容
-            } else {
-                section.classList.add("hidden"); // 隐藏其他内容
-            }
-        });
-    }
-</script>
 
 </html>

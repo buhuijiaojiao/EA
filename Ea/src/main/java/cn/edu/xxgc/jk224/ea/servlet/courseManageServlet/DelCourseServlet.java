@@ -40,7 +40,7 @@ public class DelCourseServlet extends HttpServlet {
         }
 
         if (rows > 0) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/course.jsp");
         } else {
             //删除失败
         }

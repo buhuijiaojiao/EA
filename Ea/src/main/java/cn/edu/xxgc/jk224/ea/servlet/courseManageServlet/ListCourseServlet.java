@@ -46,7 +46,7 @@ public class ListCourseServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("courseInfo", courses);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/course.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

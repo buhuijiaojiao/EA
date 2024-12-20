@@ -46,7 +46,7 @@ public class AddCourseServlet extends HttpServlet {
             e.printStackTrace();
         }
         if (rows > 0) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/course.jsp");
         } else {
             //添加失败
         }

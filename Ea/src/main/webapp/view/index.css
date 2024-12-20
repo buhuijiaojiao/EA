@@ -70,7 +70,7 @@ body {
     margin-bottom: 20px;
 }
 
-.top-bar a{
+.top-bar a {
     background-color: #ff4d4d;
     color: white;
     text-decoration: none;
@@ -131,10 +131,6 @@ body {
     color: #333;
 }
 
-/* 隐藏内容 */
-.hidden {
-    display: none;
-}
 .student-info .del-edit {
     display: inline-block;
     background-color: #f44336;
@@ -142,7 +138,9 @@ body {
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
-    transition: background-color 0.3s; }
+    transition: background-color 0.3s;
+}
+
 .student-info .del-edit a {
     text-decoration: none;
     color: white;
@@ -151,3 +149,45 @@ body {
 .student-info .del-edit:hover {
     background-color: #d32f2f;
 }
+
+/* 学生列表 */
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-info {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.course-info .del-edit {
+    display: inline-block;
+    background-color: #f44336;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.course-info .del-edit a {
+    text-decoration: none;
+    color: white;
+}
+
+.course-info .del-edit:hover {
+    background-color: #d32f2f;
+}
+
