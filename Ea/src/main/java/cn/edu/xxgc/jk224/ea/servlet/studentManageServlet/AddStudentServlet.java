@@ -50,7 +50,7 @@ public class AddStudentServlet extends HttpServlet {
         }
 
         if (rows > 0) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/student.jsp");
         } else {
             //添加失败
         }
