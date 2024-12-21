@@ -1,6 +1,7 @@
 package cn.edu.xxgc.jk224.ea.servlet.studentManageServlet;
 
 import cn.edu.xxgc.jk224.ea.entity.Student;
+import cn.edu.xxgc.jk224.ea.util.CurdUtil;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -13,13 +14,13 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 @WebServlet("/edit-student")
 public class EditStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        PrintWriter out=response.getWriter();
         String id = request.getParameter("Sid");
         String name = request.getParameter("studentName");
         String sex = request.getParameter("studentSex");
@@ -45,16 +46,14 @@ public class EditStudentServlet extends HttpServlet {
 
             //释放资源
             DBUtil.destory(conn, pstmt, null);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(rows > 0) {
+        if (rows > 0) {
             response.sendRedirect(request.getContextPath() + "/student.jsp");
-        }else {
+        } else {
             //修改失败
-            out.println("<script>alert('修改失败')</script>");
-            out.println("<script>window.location.href='/Ea_war_exploded/edit-student.jsp'</script>");
+            CurdUtil.failed(request, response, "修改失败！", "/edit-student.jsp");
         }
     }
 

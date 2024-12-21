@@ -1,6 +1,7 @@
 package cn.edu.xxgc.jk224.ea.servlet.courseManageServlet;
 
 import cn.edu.xxgc.jk224.ea.entity.Course;
+import cn.edu.xxgc.jk224.ea.util.CurdUtil;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -24,10 +25,9 @@ public class AddCourseServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        PrintWriter out=response.getWriter();
         String id = request.getParameter("Cid");
         String name = request.getParameter("courseName");
-        Course course=new Course(id,name);
+        Course course = new Course(id, name);
         int rows = 0;
         try {
             Connection conn = DBUtil.getConnection();
@@ -53,8 +53,7 @@ public class AddCourseServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/course.jsp");
         } else {
             //添加失败
-            out.println("<script>alert('添加失败,可能添加课程的课程号已存在！')</script>");
-            out.println("<script>window.location.href='/Ea_war_exploded/add-course.jsp'</script>");
+            CurdUtil.failed(request, response, "添加失败,可能添加课程的课程号已存在！", "/add-course.jsp");
         }
 
     }

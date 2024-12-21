@@ -1,5 +1,6 @@
 package cn.edu.xxgc.jk224.ea.servlet.userAuthServlet;
 
+import cn.edu.xxgc.jk224.ea.util.CurdUtil;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -65,8 +66,8 @@ public class RegServlet extends HttpServlet {
             out.print("注册成功！");
             response.sendRedirect(request.getContextPath() + "/login.jsp");
         } else {
-            out.println("<script>alert('注册失败,可能注册的用户名已存在！')</script>");
-            out.println("<script>window.location.href='/Ea_war_exploded/regist.jsp'</script>");
+            CurdUtil.failed(request,response,"注册失败,可能注册的用户名已存在！","/regist.jsp");
+
         }
 
     }

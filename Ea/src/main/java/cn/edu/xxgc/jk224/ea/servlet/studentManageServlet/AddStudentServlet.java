@@ -2,6 +2,7 @@ package cn.edu.xxgc.jk224.ea.servlet.studentManageServlet;
 
 
 import cn.edu.xxgc.jk224.ea.entity.Student;
+import cn.edu.xxgc.jk224.ea.util.CurdUtil;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -25,7 +26,6 @@ public class AddStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        PrintWriter out=response.getWriter();
         //获取表单输入的学生信息
         String id = request.getParameter("Sid");
         String name = request.getParameter("studentName");
@@ -56,8 +56,7 @@ public class AddStudentServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/student.jsp");
         } else {
             //添加失败
-            out.println("<script>alert('添加失败,可能添加学生的学号已存在！')</script>");
-            out.println("<script>window.location.href='/Ea_war_exploded/add-student.jsp'</script>");
+            CurdUtil.failed(request, response, "添加失败,可能添加学生的学号已存在！", "/add-student.jsp");
         }
     }
 

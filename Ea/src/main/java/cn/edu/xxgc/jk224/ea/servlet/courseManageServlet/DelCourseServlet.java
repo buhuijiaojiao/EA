@@ -1,6 +1,7 @@
 package cn.edu.xxgc.jk224.ea.servlet.courseManageServlet;
 
 
+import cn.edu.xxgc.jk224.ea.util.CurdUtil;
 import cn.edu.xxgc.jk224.ea.util.DBUtil;
 
 import javax.servlet.ServletException;
@@ -24,7 +25,6 @@ public class DelCourseServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        PrintWriter out=response.getWriter();
         String id = request.getParameter("id");
         int rows = 0;
         try {
@@ -46,9 +46,7 @@ public class DelCourseServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/course.jsp");
         } else {
             //删除失败
-            out.println("<script>alert('删除失败')</script>");
-            out.println("<script>window.location.href='/Ea_war_exploded/course.jsp'</script>");
-
+            CurdUtil.failed(request, response, "删除失败", "/course.jsp");
         }
     }
 
