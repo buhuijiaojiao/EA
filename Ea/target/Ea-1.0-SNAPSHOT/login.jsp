@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>教务管理系统</title>
-    <link rel="stylesheet" href="view/login.css">
+    <link rel="stylesheet" href="./view/login.css">
+    <meta charset="UTF-8">
     <script>
         function check() {
             const name = document.getElementById('username')
