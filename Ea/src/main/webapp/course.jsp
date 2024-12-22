@@ -9,7 +9,6 @@
          pageEncoding="UTF-8" %>
 <%@ page import="java.util.HashSet,cn.edu.xxgc.jk224.ea.entity.*" %>
 <%@ page import="java.util.List" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
