@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>教务管理系统</title>
-    <link rel="stylesheet" href="view/index.css">
+    <link rel="stylesheet" href="./view/index.css">
 
 </head>
 <body>

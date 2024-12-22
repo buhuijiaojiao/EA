@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>添加学生信息</title>
-    <link rel="stylesheet" href="view/add-edit.css">
+    <link rel="stylesheet" href="./view/add-edit.css">
     <script>
         function updateMajors() {
             const department = document.getElementById("department").value;

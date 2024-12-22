@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>添加课程</title>
-    <link rel="stylesheet" href="view/add-edit.css">
+    <link rel="stylesheet" href="./view/add-edit.css">
 </head>
 <body>
 <div class="container">

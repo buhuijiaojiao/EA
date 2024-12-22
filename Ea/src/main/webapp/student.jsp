@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>学生管理</title>
-    <link rel="stylesheet" href="view/index.css">
+    <link rel="stylesheet" href="./view/index.css">
 </head>
 <body>
 <div class="container">
