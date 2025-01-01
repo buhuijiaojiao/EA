@@ -23,20 +23,7 @@
   - CSS 17.2%
 
 ## 目录结构
-EA/
-├── src/ # 源代码目录
-│ ├── main/ # 主程序代码
-│ │ ├── java/ # Java代码（Servlet,, Filter）
-│ │ ├── webapp/ # Web应用目录
-│ │ │ ├── WEB-INF/ # WEB-INF目录
-│ │ │ ├── jsp/ # JSP页面
-│ │ │ └── view/ # 静态资源（CSS、JS等）
-│ └── test/ # 测试代码
-├── docs/ # 文档
-├── build/ # 构建文件
-├── .gitignore # Git忽略文件
-├── README.md # 项目说明文件
-└── pom.xml # Maven项目文件
+
 
 ## 安装与运行
 ### 环境要求
@@ -74,7 +61,6 @@ EA/
 欢迎任何形式的贡献！
 
 ## 许可证
-本项目采用 [MIT License](LICENSE) 许可证。
 
 ## 联系方式
 如果您有任何问题或建议，请通过以下方式联系我：
